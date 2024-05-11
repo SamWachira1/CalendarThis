@@ -1,7 +1,7 @@
 from flask import render_template, redirect, Blueprint
 
-bp = Blueprint('main', __name__, url_prefix='/')
+bp = Blueprint('main', __name__)
 
 @bp.route('/')
-def index():
-    return 'Hello, World!'
+def main():
+    return "Calendar working"
