@@ -1,4 +1,4 @@
-<form method="post" action="/">
+<form method="post" action="">
   <!-- use your form variable here -->
   <!-- to make your form           -->
 
@@ -13,6 +13,16 @@
     <div>
       {{ form.end_date.label }}: {{ form.end_date() }}
       {{ form.end_time.label }}: {{ form.end_time() }}
+
+          {% if form.end_date.errors %}
+            <ul class="errors">
+                {% for error in form.end_date.errors %}
+                  <li style="color: red;"> {{ error }} </li>
+                {% endfor %}
+            </ul>
+          {% endif %}
+     
+     
     </div>
     <div>
       {{ form.description.label }}: {{ form.description() }}
